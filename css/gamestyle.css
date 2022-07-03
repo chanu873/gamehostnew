@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+  height: 100vh;
+  width: 100%;
+}
+header{
+    height: 100vh;
+    background-image:url(../img/andreas-haslinger-JssHVzCjoVQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(40px);
+    display: flex;
+width:99.5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    transition: 700ms all ease;
+}
+h3{
+    font-size: 170px;
+    text-align: center;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    color: rgb(40, 11, 94);
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+input{
+    padding: 12px 30px;
+    border: none;
+    border-radius: 70px;
+}
+
+#btn01{
+    padding:12px 30px;
+    border-radius: 30px;
+    background-color: rgb(4, 56, 87);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#btn02{
+    padding:12px 30px;
+    border-radius: 30px;
+    background-color: rgb(4, 56, 87);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+h4{
+    font-size: 40px;
+}
+#msbox{
+    width: 350px;
+    background-image: url(../img/—Pngtree—cartoon\ hand\ drawn\ geometry\ text_3840487.png);
+    background-size: 1000px;
+    animation: rotate linear infinite;
+    background-position: center;
+    background-size: cover;
+    padding: 60px;
+}
+img{
+  width: 50px;
+}
+
+.lives{
+    display: block;
+    gap: 70px;
+    width: 400px;
+    text-align: center;
+}
+@media screen and (max-width: 480px) {
+    body h3 {
+      font-size: 30px;
+    }
+    h1 img{
+        width:200px ;
+      }
+  }
+  h1 img{
+    width:300px ;
+  }
+  #modal1{
+    background-color: #E94057;
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 30px;
+    transition: 300ms all ease-in-out ;
+  }
+  #modalClass1{
+    position: absolute;
+    font-size: 40px;
+    margin-left: 730px;
+    margin-bottom: 250px;
+    transition:300ms all ease-in;
+    border-radius: 50%;
+    
+  }
+  #modalClass1:hover{
+    background-color: white;
+    color: #E94057;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .score{
+    position: absolute;
+    margin-bottom: 800px;
+    margin-left: 1000px;
+    font-size: 100px;
+  }
+  h4{
+    text-transform: uppercase;
+  }
+  input{
+    background-color: white;
+  }
+  #btn01{
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #0d6efd;  
+    transition: 400ms all ease-in ; 
+    color: white;
+}
+#btn01:hover{
+    background-color: none;
+    background-color: #0d6efd;
+  }
+  #btn02{
+transition: 400ms all ease-in;
+    font-weight: 700;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #20c997;
+  }
+  #btn02:hover{
+    background-color: #20c997;
+  }
+  #img1:hover{
+    width: 60px;
+    transition: 500ms all ease-in;
+  }
+  #img2:hover{
+    width: 60px;
+    transition: 500ms all ease-in;
+  }
+  #img3:hover{
+    width: 60px;
+    transition: 500ms all ease-in;
+  }
+  #img4:hover{
+    width: 60px;
+    transition: 500ms all ease-in;
+  }
+  #img5:hover{
+    width: 60px;
+    transition: 500ms all ease-in;
+  }
+  #modal2{
+    background-color: #20c997;
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: visible;
+  }
+  #modal2 h1{
+    text-transform: uppercase;
+    color: #0d6efd;
+    font-weight: 800;
+  }
+  #modal2 h3{
+    color: #E94057;
+  }
+  #modalClass2{
+    position: absolute;
+    font-size: 40px;
+    margin-left: 550px;
+    margin-bottom: 250px;
+    transition:300ms all ease-in;
+    border-radius: 50%;
+    
+  }
+  #modalClass2:hover{
+    background-color: white;
+    color: #20c997;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+ #help{
+  background-color: white;
+  /* padding: 30px 30px; */
+  color: black;
+  padding: 2px ;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  margin-left: 1200px;
+ }
+ #help:hover{
+  padding: 5px;
+ }
+@media (max-width:375px){
+  body{
+    width: 100%;
+    height: 100vh;
+  }
+  #modal2{
+    background-color: #0d6efd;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: visible;
+  }
+  #modal2 h1{
+    font-size: 20px;
+  }
+  #modal2 h3{
+    font-size: 20px;
+  }
+  #modalClass2{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 160px;
+    margin-left: 220px;
+    width: 20px;
+    height: 20px;
+  }
+  #modalClass2:hover{
+    background-color: #0d6efd;
+    color: white;
+  }
+}
+input{
+  color: black;
+}
+@media(max-width:450px){
+  body{
+    background-color: black;
+  }
+}

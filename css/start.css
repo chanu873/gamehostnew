@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-image: url(../img/joanna-kosinska-7ACuHoezUYk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    overflow: hidden;
+    
+}
+h1{
+    color: white;
+    font-family: sans-serif;
+    font-size: 140px;
+    text-align: center;
+}
+.text{
+    width: 700px;
+    position: absolute;
+    margin-left: 500px;
+}
+a{
+    font-size: 25px;
+    padding: 20px 30px;
+    background-image: linear-gradient(to right,#2980b9,#34e89e);
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 800px;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: 400ms all ease-in-out;
+}
+a:Hover{
+    background-image: linear-gradient(to left,#2980b9,#34e89e);
+}
