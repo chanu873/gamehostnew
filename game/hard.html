@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲Game | Play</title>
+    <link rel="stylesheet" href="../css/gamestyle.css">
+    <link rel="icon" href="img/weblgo.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="container-fluid">
+        <img id="help" src="img/information.png" alt="help">
+        <h3>GUESS THE NUMBER !!!</h3>
+        <h1><img id="msbox" src="img/—Pngtree—mystery box_5986608.png" alt="mysbox"></h1>
+
+        <input type="text">
+        <button class="btn md-dark" id="btn01">Check</button>
+
+        <h2>Result</h2>
+
+        <h4>Life:<span>3</span></h4>
+        <h4>HIGHSCORE: <span id="hs">0</span></h4>
+        <button id="btn02">Play Again From Begining</button>
+<div id="modal1" class="container-fluid">
+    <h1>Please Enter A Valid Number 0-20 <br> <strong>Do Not Keep Empty The Input</strong></h1>
+    <ion-icon name="close-circle" id="modalClass1"></ion-icon>
+</div>
+<div class="score">
+    <h4>score: <span id="sc">0</span></h4>
+</div>
+<div id="modal2"  class="container-fluid">
+    <h1 class="alert alert-success">instructions</h1>
+    <h3 class="alert alert-danger">Enter A Number From 0 to 20</h3>
+    <ion-icon name="close-circle" id="modalClass2"></ion-icon>
+</div>
+<div class="batoho">
+    <a id="batohoa" href="../index.html">Back To Home</a>
+</div>
+    </header>
+    <script>
+let score = 0;
+
+let life = 3;
+let life1 = document.getElementById('img1');
+        let life2 = document.getElementById('img2');
+        let life3 = document.getElementById('img3');
+        let life4 = document.getElementById('img4');
+        let life5 = document.getElementById('img5');
+        if(life === 2){
+            life5.style.display = 'none';
+        }
+        let magNumber = Math.trunc(Math.random()*20);
+        console.log(`Old Number${magNumber}`)
+       let highscore = 0;
+console.log(magNumber);
+
+function soundPlay(soundClip) {
+    let audio = new Audio(soundClip);
+    audio.play();
+}
+
+        document.getElementById('btn01').addEventListener('click', function() {
+
+            let userAnwser = +document.querySelector('input').value;
+            if(!userAnwser){
+                document.getElementById('modal1').style.visibility = 'visible';
+            }
+            //When Player Win!!!
+            if(userAnwser == magNumber){
+                if(score < 30){
+                    document.querySelector('h2').innerHTML = '😁You Are Correct😁';
+                document.querySelector('body').style.backgroundColor = 'yellowgreen';
+                document.querySelector('body').style.Color = 'white';
+                document.querySelector('input').disabled = 'true';
+                soundPlay('Audio/correct2.mp3');
+                score = score + 10;
+                document.getElementById('sc').innerHTML = score;
+                }else{
+                    document.querySelector('h2').innerHTML = '😊CONGRADULATIONS😊';
+                    soundPlay('Audio/victory2.mp3');
+                }
+                if(life > highscore){
+                        highscore = life;
+                        document.getElementById('hs').innerHTML = highscore;
+                }}else{
+                    if(life > 1){
+                        document.querySelector('h2').innerHTML = (userAnwser > magNumber) ? "Thats Too High" : "Thats Too Low";
+                        soundPlay('Audio/wrong2.mp3');
+                    document.querySelector('body').style.backgroundColor = 'orange';
+                 life--;
+                 document.querySelector('span').innerHTML = life;
+                    }else{
+                        document.querySelector('h2').innerHTML = '🙋‍♂️Game Over!!!!!🙋‍♂️';
+                     document.querySelector('body').style.backgroundColor = 'red';
+                     document.querySelector('span').innerHTML = 0;
+                     document.querySelector('input').disabled = true;
+                     document.getElementById('btn02').innerHTML = 'Reset';
+                     soundPlay('Audio/over2.mp3');
+                     
+                    }
+                }
+                //When Player Guess High Number!!!
+        //     }else if(userAnwser > magNumber){
+        //         if(life > 1){
+        //             document.querySelector('h2').innerHTML = '😶that is too high😶';
+        //         document.querySelector('body').style.backgroundColor = 'orange';
+        //         life--;
+        //         document.querySelector('span').innerHTML = life;
+        //         }else{
+        //             document.querySelector('h2').innerHTML = '🙋‍♂️Game Over!!!!!🙋‍♂️';
+        //             document.querySelector('body').style.backgroundColor = 'red';
+        //             document.querySelector('span').innerHTML = 0;
+        //             document.querySelector('input').disabled = true;
+        //         }
+        //         //When Player Guess The Low Number!!!
+        //     }else if(userAnwser < magNumber){
+        //         if(life > 1){
+        //             document.querySelector('h2').innerHTML = '😥that is too low😥';
+        //         document.querySelector('body').style.backgroundColor = 'darkcyan';
+        //      life--;
+        //     document.querySelector('span').innerHTML = life;
+        //         }else{
+        //             document.querySelector('h2').innerHTML = '🙋‍♂️Game Over!!!!!🙋‍♂️';
+        //             document.querySelector('body').style.backgroundColor = 'red';
+        //             document.querySelector('span').innerHTML = '0';
+        //             document.querySelector('input').disabled = true;
+        //         }
+        //     }
+
+        // } )
+     
+        // let but2 = document.getElementById('btn02');
+        // but2.addEventListener('click',function(){
+        //     document.querySelector('body').style.backgroundColor = '';
+        //     document.querySelector('h2').innerHTML = 'Results';
+        //     document.querySelector('input').value = '';
+        //     magNumber = Math.trunc(Math.random()*20);
+        //     console.log(`New Number ${magNumber}`)
+        //     life = '5';
+        //     document.querySelector('span').innerHTML = life;
+        //     document.querySelector('input').disabled = false;
+        })
+        document.getElementById('modalClass1').addEventListener('click' , function(){
+            document.getElementById('modal1').style.visibility = 'hidden';
+        })
+        document.getElementById('modalClass2').addEventListener('click' , function(){
+            document.getElementById('modal2').style.visibility = 'hidden';
+        })
+
+        let but2 = document.getElementById('btn02');
+        but2.addEventListener('click',function(){
+            document.querySelector('body').style.backgroundColor = '';
+            document.querySelector('h2').innerHTML = 'Results';
+            document.querySelector('input').value = '';
+            magNumber = Math.trunc(Math.random()*20);
+            console.log(`New Number ${magNumber}`)
+            life = '3';
+            document.querySelector('span').innerHTML = life;
+            document.querySelector('input').disabled = false;
+            
+            document.getElementById('btn02').innerHTML = 'Play Again From Begining';
+        })
+        let helbtn = document.getElementById('help');
+        helbtn.addEventListener('click' , function(){
+            document.getElementById('modal2').style.visibility = 'visible';
+        })
+    </script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+</body>
+</html>
